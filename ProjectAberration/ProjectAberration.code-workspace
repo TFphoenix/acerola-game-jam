@@ -30,7 +30,7 @@
 					"ProjectAberration",
 					"Win64",
 					"Debug",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -47,7 +47,7 @@
 					"ProjectAberration",
 					"Win64",
 					"Debug",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -67,7 +67,7 @@
 					"ProjectAberration",
 					"Win64",
 					"Debug",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -84,7 +84,7 @@
 					"ProjectAberration",
 					"Win64",
 					"DebugGame",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -101,7 +101,7 @@
 					"ProjectAberration",
 					"Win64",
 					"DebugGame",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -121,7 +121,7 @@
 					"ProjectAberration",
 					"Win64",
 					"DebugGame",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -138,7 +138,7 @@
 					"ProjectAberration",
 					"Win64",
 					"Development",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -155,7 +155,7 @@
 					"ProjectAberration",
 					"Win64",
 					"Development",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -175,7 +175,7 @@
 					"ProjectAberration",
 					"Win64",
 					"Development",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -192,7 +192,7 @@
 					"ProjectAberration",
 					"Win64",
 					"Test",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -209,7 +209,7 @@
 					"ProjectAberration",
 					"Win64",
 					"Test",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -229,7 +229,7 @@
 					"ProjectAberration",
 					"Win64",
 					"Test",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -246,7 +246,7 @@
 					"ProjectAberration",
 					"Win64",
 					"Shipping",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -263,7 +263,7 @@
 					"ProjectAberration",
 					"Win64",
 					"Shipping",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -283,7 +283,7 @@
 					"ProjectAberration",
 					"Win64",
 					"Shipping",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -300,7 +300,7 @@
 					"ProjectAberrationEditor",
 					"Win64",
 					"Debug",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -317,7 +317,7 @@
 					"ProjectAberrationEditor",
 					"Win64",
 					"Debug",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -337,7 +337,7 @@
 					"ProjectAberrationEditor",
 					"Win64",
 					"Debug",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -354,7 +354,7 @@
 					"ProjectAberrationEditor",
 					"Win64",
 					"DebugGame",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -371,7 +371,7 @@
 					"ProjectAberrationEditor",
 					"Win64",
 					"DebugGame",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -391,7 +391,7 @@
 					"ProjectAberrationEditor",
 					"Win64",
 					"DebugGame",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -408,7 +408,7 @@
 					"ProjectAberrationEditor",
 					"Win64",
 					"Development",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -425,7 +425,7 @@
 					"ProjectAberrationEditor",
 					"Win64",
 					"Development",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -445,7 +445,7 @@
 					"ProjectAberrationEditor",
 					"Win64",
 					"Development",
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -462,7 +462,7 @@
 			{
 				"name": "Launch ProjectAberration (Debug)",
 				"request": "launch",
-				"program": "F:\\Projects\\acerola\\ProjectAberration\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"program": "F:\\Projects\\acerola-game-jam\\ProjectAberration\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
 				"preLaunchTask": "ProjectAberration Win64 Debug Build",
 				"args": [
 				],
@@ -478,7 +478,7 @@
 			{
 				"name": "Launch ProjectAberration (DebugGame)",
 				"request": "launch",
-				"program": "F:\\Projects\\acerola\\ProjectAberration\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"program": "F:\\Projects\\acerola-game-jam\\ProjectAberration\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
 				"preLaunchTask": "ProjectAberration Win64 DebugGame Build",
 				"args": [
 				],
@@ -494,7 +494,7 @@
 			{
 				"name": "Launch ProjectAberration (Development)",
 				"request": "launch",
-				"program": "F:\\Projects\\acerola\\ProjectAberration\\Binaries\\Win64\\UnrealGame.exe",
+				"program": "F:\\Projects\\acerola-game-jam\\ProjectAberration\\Binaries\\Win64\\UnrealGame.exe",
 				"preLaunchTask": "ProjectAberration Win64 Development Build",
 				"args": [
 				],
@@ -510,7 +510,7 @@
 			{
 				"name": "Launch ProjectAberration (Test)",
 				"request": "launch",
-				"program": "F:\\Projects\\acerola\\ProjectAberration\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"program": "F:\\Projects\\acerola-game-jam\\ProjectAberration\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
 				"preLaunchTask": "ProjectAberration Win64 Test Build",
 				"args": [
 				],
@@ -526,7 +526,7 @@
 			{
 				"name": "Launch ProjectAberration (Shipping)",
 				"request": "launch",
-				"program": "F:\\Projects\\acerola\\ProjectAberration\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"program": "F:\\Projects\\acerola-game-jam\\ProjectAberration\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
 				"preLaunchTask": "ProjectAberration Win64 Shipping Build",
 				"args": [
 				],
@@ -545,7 +545,7 @@
 				"program": "F:\\Programs\\Epic Games\\Unreal\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
 				"preLaunchTask": "ProjectAberrationEditor Win64 Debug Build",
 				"args": [
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject"
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject"
 				],
 				"cwd": "F:\\Programs\\Epic Games\\Unreal\\UE_5.3",
 				"stopAtEntry": false,
@@ -562,7 +562,7 @@
 				"program": "F:\\Programs\\Epic Games\\Unreal\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
 				"preLaunchTask": "ProjectAberrationEditor Win64 DebugGame Build",
 				"args": [
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject"
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject"
 				],
 				"cwd": "F:\\Programs\\Epic Games\\Unreal\\UE_5.3",
 				"stopAtEntry": false,
@@ -579,7 +579,7 @@
 				"program": "F:\\Programs\\Epic Games\\Unreal\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
 				"preLaunchTask": "ProjectAberrationEditor Win64 Development Build",
 				"args": [
-					"F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject"
+					"F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject"
 				],
 				"cwd": "F:\\Programs\\Epic Games\\Unreal\\UE_5.3",
 				"stopAtEntry": false,
@@ -599,7 +599,7 @@
 				"args": [
 					"-projectfiles",
 					"-vscode",
-					"-project=F:\\Projects\\acerola\\ProjectAberration\\ProjectAberration.uproject",
+					"-project=F:\\Projects\\acerola-game-jam\\ProjectAberration\\ProjectAberration.uproject",
 					"-game",
 					"-engine",
 					"-dotnet"
