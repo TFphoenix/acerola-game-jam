@@ -43,7 +43,6 @@ struct FPartAbility
 {
 	GENERATED_USTRUCT_BODY()
 
-public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Ability")
 	UPaperSprite *Icon;
 
@@ -52,6 +51,33 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Ability")
 	int32 Damage;
+};
+
+USTRUCT(BlueprintType)
+struct FPartSprites
+{
+	GENERATED_USTRUCT_BODY()
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
+	UPaperSprite *Front3Sprite;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
+	UPaperSprite *Front2Sprite;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
+	UPaperSprite *Front1Sprite;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
+	UPaperSprite *BodySprite;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
+	UPaperSprite *Back1Sprite;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
+	UPaperSprite *Back2Sprite;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
+	UPaperSprite *Back3Sprite;
 };
 
 /**
@@ -63,27 +89,21 @@ class PROJECTABERRATION_API UBodyPartDataAsset : public UDataAsset
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Visuals")
-	UPaperSprite *FrontSprite;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Visuals")
-	UPaperSprite *BodySprite;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Visuals")
-	UPaperSprite *BackSprite;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Data")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	FString Name;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Data")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	EMultiplierType ModifierType;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Data")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	EAberrationElementType AberrationElementType;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Data")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	FPartStats Stats;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Data")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	TArray<FPartAbility> Abilities;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	FPartSprites Sprites;
 };
