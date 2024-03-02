@@ -4,7 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "ElementDataAsset.h"
 #include "StatsComponent.generated.h"
+
+
+UENUM(BlueprintType)
+enum class EModifierType : uint8
+{
+	Attack UMETA(DisplayName = "Attack"),
+	Defense UMETA(DisplayName = "Defense")
+};
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class PROJECTABERRATION_API UStatsComponent : public UActorComponent
@@ -26,14 +35,11 @@ public:
 private:
 	int health = 0;
 	int attack = 0;
-	float earthAttackMultiplier = 0.0f;
-	float fireAttackMultiplier = 0.0f;
-	float waterAttackMultiplier = 0.0f;
-	float airAttackMultiplier = 0.0f;
-	float earthDefenseMultiplier = 0.0f;
-	float fireDefenseMultiplier = 0.0f;
-	float waterDefenseMultiplier = 0.0f;
-	float airDefenseMultiplier = 0.0f;
+	TMap<EAberrationElementType, float> attackMultipliers;
+	TMap<EAberrationElementType, float> defenseMultipliers;
 
 public:
+	int GetHealth();
+	int GetAttack();
+	float GetMultiplier(EModifierType type, EAberrationElementType element);
 };
