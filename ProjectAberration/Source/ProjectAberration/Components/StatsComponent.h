@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "ElementDataAsset.h"
+#include "../Data/ElementDataAsset.h"
 #include "StatsComponent.generated.h"
 
 

@@ -2,7 +2,7 @@
 
 
 #include "StatsComponent.h"
-#include "ElementDataAsset.h"
+#include "../Data/ElementDataAsset.h"
 
 // Sets default values for this component's properties
 UStatsComponent::UStatsComponent()
