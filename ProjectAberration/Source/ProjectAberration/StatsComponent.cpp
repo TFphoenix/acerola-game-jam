@@ -2,6 +2,7 @@
 
 
 #include "StatsComponent.h"
+#include "ElementDataAsset.h"
 
 // Sets default values for this component's properties
 UStatsComponent::UStatsComponent()
@@ -19,8 +20,14 @@ void UStatsComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
-	
+	attackMultipliers[EAberrationElementType::Fire] = 0.0f;
+	attackMultipliers[EAberrationElementType::Water] = 0.0f;
+	attackMultipliers[EAberrationElementType::Earth] = 0.0f;
+	attackMultipliers[EAberrationElementType::Air] = 0.0f;
+	defenseMultipliers[EAberrationElementType::Fire] = 0.0f;
+	defenseMultipliers[EAberrationElementType::Water] = 0.0f;
+	defenseMultipliers[EAberrationElementType::Earth] = 0.0f;
+	defenseMultipliers[EAberrationElementType::Air] = 0.0f;
 }
 
 
@@ -32,3 +39,24 @@ void UStatsComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 	// ...
 }
 
+int UStatsComponent::GetHealth()
+{
+	return health;
+}
+
+int UStatsComponent::GetAttack()
+{
+	return attack;
+}
+
+float UStatsComponent::GetMultiplier(EModifierType type, EAberrationElementType element)
+{
+	switch(type){
+		case EModifierType::Attack:
+			return attackMultipliers[element];
+		case EModifierType::Defense:
+			return defenseMultipliers[element];
+	}
+
+	return 0.0f;
+}
