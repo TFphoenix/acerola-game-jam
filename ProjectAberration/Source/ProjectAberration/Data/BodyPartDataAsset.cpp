@@ -2,13 +2,13 @@
 
 #include "BodyPartDataAsset.h"
 
-float FPartStats::GetMultiplier(EMultiplierType type, EAberrationElementType element)
+float FPartStats::GetMultiplier(EStrategicType type, EAberrationElementType element)
 {
     switch (type)
     {
-    case EMultiplierType::Attack:
+    case EStrategicType::Attack:
         return AttackMultipliers[element];
-    case EMultiplierType::Defense:
+    case EStrategicType::Defense:
         return DefenseMultipliers[element];
     default:
         return 0.0f;
