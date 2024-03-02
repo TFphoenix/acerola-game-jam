@@ -4,16 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "../Data/ElementDataAsset.h"
 #include "StatsComponent.generated.h"
 
-
-UENUM(BlueprintType)
-enum class EModifierType : uint8
-{
-	Attack UMETA(DisplayName = "Attack"),
-	Defense UMETA(DisplayName = "Defense")
-};
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class PROJECTABERRATION_API UStatsComponent : public UActorComponent
@@ -33,13 +25,8 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
 
 private:
-	int health = 0;
-	int attack = 0;
-	TMap<EAberrationElementType, float> attackMultipliers;
-	TMap<EAberrationElementType, float> defenseMultipliers;
+	// TODO
 
 public:
-	int GetHealth();
-	int GetAttack();
-	float GetMultiplier(EModifierType type, EAberrationElementType element);
+	// TODO
 };
