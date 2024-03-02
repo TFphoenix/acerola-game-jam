@@ -24,3 +24,14 @@ void UStatsComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
+
+void UStatsComponent::TakeDamage(const int32 InDamage)
+{
+	CurrentHealth -= InDamage;
+	OnTakeDamage.Broadcast();
+
+	if(CurrentHealth <= 0)
+	{
+		OnDeath.Broadcast();
+	}
+}
