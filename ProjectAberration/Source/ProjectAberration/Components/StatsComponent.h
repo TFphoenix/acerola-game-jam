@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "../Data/BodyPartDataAsset.h"
 #include "StatsComponent.generated.h"
 
 
@@ -24,9 +25,7 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
 
-private:
-	// TODO
-
 public:
-	// TODO
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FPartStats GeneralStats;
 };

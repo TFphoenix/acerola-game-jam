@@ -10,7 +10,7 @@
 class UPaperSprite;
 
 UENUM(BlueprintType)
-enum class EMultiplierType : uint8
+enum class EStrategicType : uint8
 {
 	Attack UMETA(DisplayName = "Attack"),
 	Defense UMETA(DisplayName = "Defense")
@@ -23,19 +23,19 @@ struct FPartStats
 
 	static TMap<EAberrationElementType, float> InitializeModifiers();
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stats")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	int32 Health;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stats")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	int32 Attack;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stats")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	TMap<EAberrationElementType, float> AttackMultipliers = FPartStats::InitializeModifiers();
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stats")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	TMap<EAberrationElementType, float> DefenseMultipliers = FPartStats::InitializeModifiers();
 
-	float GetMultiplier(EMultiplierType type, EAberrationElementType element);
+	float GetMultiplier(EStrategicType type, EAberrationElementType element);
 };
 
 USTRUCT(BlueprintType)
@@ -93,10 +93,10 @@ public:
 	FString Name;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	EMultiplierType ModifierType;
+	EStrategicType StrategicType;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	EAberrationElementType AberrationElementType;
+	EAberrationElementType ElementType;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	FPartStats Stats;
