@@ -10,7 +10,7 @@
 class UPaperSprite;
 
 UENUM(BlueprintType)
-enum class EModifierType : uint8
+enum class EMultiplierType : uint8
 {
 	Attack UMETA(DisplayName = "Attack"),
 	Defense UMETA(DisplayName = "Defense")
@@ -30,12 +30,12 @@ struct FPartStats
 	int32 Attack;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stats")
-	TMap<EAberrationElementType, float> AttackModifiers = FPartStats::InitializeModifiers();
+	TMap<EAberrationElementType, float> AttackMultipliers = FPartStats::InitializeModifiers();
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stats")
-	TMap<EAberrationElementType, float> DefenseModifiers = FPartStats::InitializeModifiers();
+	TMap<EAberrationElementType, float> DefenseMultipliers = FPartStats::InitializeModifiers();
 
-	float GetModifier(EModifierType type, EAberrationElementType element);
+	float GetMultiplier(EMultiplierType type, EAberrationElementType element);
 };
 
 USTRUCT(BlueprintType)
@@ -63,18 +63,27 @@ class PROJECTABERRATION_API UBodyPartDataAsset : public UDataAsset
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Visuals")
+	UPaperSprite *FrontSprite;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Visuals")
+	UPaperSprite *BodySprite;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Visuals")
+	UPaperSprite *BackSprite;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Data")
 	FString Name;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	EModifierType ModifierType;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Data")
+	EMultiplierType ModifierType;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Data")
 	EAberrationElementType AberrationElementType;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Data")
 	FPartStats Stats;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Data")
 	TArray<FPartAbility> Abilities;
 };
