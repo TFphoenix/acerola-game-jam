@@ -31,10 +31,10 @@ public:
 
 public:
 	UFUNCTION(BlueprintCallable, Category = "Combat")
-	int32 TakeDamage(const int32 InDamage, const EAberrationElementType InDamageType);
+	int32 TakeDamage(const int32& InDamage);
 
 	UFUNCTION(BlueprintCallable, Category = "Combat")
-	int32 DealDamage(const int32 InDamage, const EAberrationElementType InDamageType);
+	int32 CalculateAbilityDamage(const FPartAbility& InAbility, UStatsComponent* InOpponentStats);
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -43,6 +43,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 CurrentHealth;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	bool bIsDead;
+
+	// Events
 	UPROPERTY(BlueprintAssignable)
 	FBlueprintOnTakeDamage OnTakeDamage;
 
