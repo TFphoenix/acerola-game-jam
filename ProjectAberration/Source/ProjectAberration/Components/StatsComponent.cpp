@@ -25,7 +25,7 @@ void UStatsComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
 
-void UStatsComponent::TakeDamage(const int32 InDamage, const EAberrationElementType InDamageType)
+int32 UStatsComponent::TakeDamage(const int32 InDamage, const EAberrationElementType InDamageType)
 {
 	// Calculate damage
 	float DamageMultiplier = GeneralStats.GetMultiplier(EStrategicType::Defense, InDamageType);
@@ -41,6 +41,8 @@ void UStatsComponent::TakeDamage(const int32 InDamage, const EAberrationElementT
 	{
 		OnDeath.Broadcast();
 	}
+
+	return Damage;
 }
 
 int32 UStatsComponent::DealDamage(const int32 InDamage, const EAberrationElementType InDamageType)
@@ -48,5 +50,6 @@ int32 UStatsComponent::DealDamage(const int32 InDamage, const EAberrationElement
 	// Calculate damage
 	float DamageMultiplier = GeneralStats.GetMultiplier(EStrategicType::Attack, InDamageType);
 	int32 Damage = (GeneralStats.Attack + InDamage) * DamageMultiplier;
+	
 	return Damage;
 }
