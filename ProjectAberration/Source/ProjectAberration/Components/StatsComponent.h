@@ -30,8 +30,11 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
 
 public:
-	UFUNCTION(BlueprintCallable, Category = "Health")
-	void TakeDamage(const int32 InDamage);
+	UFUNCTION(BlueprintCallable, Category = "Combat")
+	void TakeDamage(const int32 InDamage, const EAberrationElementType InDamageType);
+
+	UFUNCTION(BlueprintCallable, Category = "Combat")
+	int32 DealDamage(const int32 InDamage, const EAberrationElementType InDamageType);
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
