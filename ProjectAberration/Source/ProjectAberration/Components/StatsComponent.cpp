@@ -1,6 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "StatsComponent.h"
 
 // Sets default values for this component's properties
@@ -11,7 +10,6 @@ UStatsComponent::UStatsComponent()
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
-
 // Called when the game starts
 void UStatsComponent::BeginPlay()
 {
@@ -20,40 +18,46 @@ void UStatsComponent::BeginPlay()
 	// Initialize multipliers to 100%
 	GeneralStats.AttackMultipliers = FPartStats::InitializeMultipliers(1.0f);
 	GeneralStats.DefenseMultipliers = FPartStats::InitializeMultipliers(1.0f);
+
+	bIsDead = false;
 }
 
-
 // Called every frame
-void UStatsComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void UStatsComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
 
-int32 UStatsComponent::TakeDamage(const int32 InDamage, const EAberrationElementType InDamageType)
+int32 UStatsComponent::TakeDamage(const int32 &InDamage)
 {
-	// Calculate damage
-	float DamageMultiplier = GeneralStats.GetMultiplier(EStrategicType::Defense, InDamageType);
-	float DamageModifier = (DamageMultiplier - 1.0f) * InDamage;
-	int32 Damage = InDamage - DamageModifier;
+	if (bIsDead) return 0;
 
 	// Take damage
-	CurrentHealth -= Damage;
+	CurrentHealth -= InDamage;
 	OnTakeDamage.Broadcast();
 
 	// Check if dead
-	if(CurrentHealth <= 0)
+	if (CurrentHealth <= 0)
 	{
+		bIsDead = true;
 		OnDeath.Broadcast();
 	}
 
-	return Damage;
+	return InDamage;
 }
 
-int32 UStatsComponent::DealDamage(const int32 InDamage, const EAberrationElementType InDamageType)
+int32 UStatsComponent::CalculateAbilityDamage(const FPartAbility &InAbility, UStatsComponent *InOpponentStats)
 {
-	// Calculate damage
-	float DamageMultiplier = GeneralStats.GetMultiplier(EStrategicType::Attack, InDamageType);
-	int32 Damage = (GeneralStats.Attack + InDamage) * DamageMultiplier;
+	if (bIsDead) return 0;
+
+	// Calculate damage dealt
+	float DamageMultiplier = GeneralStats.GetMultiplier(EStrategicType::Attack, InAbility.ElementType);
+	int32 Damage = (InAbility.Damage + GeneralStats.Attack) * DamageMultiplier;
+
+	// Calculate damage taken
+	float OpponentDamageMultiplier = InOpponentStats->GeneralStats.GetMultiplier(EStrategicType::Defense, InAbility.ElementType);
+	float OpponentDamageModifier = (OpponentDamageMultiplier - 1.0f) * Damage;
+	Damage -= OpponentDamageModifier;
 
 	return Damage;
 }
