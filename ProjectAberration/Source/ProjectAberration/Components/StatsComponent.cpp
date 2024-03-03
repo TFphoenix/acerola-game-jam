@@ -25,13 +25,28 @@ void UStatsComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
 
-void UStatsComponent::TakeDamage(const int32 InDamage)
+void UStatsComponent::TakeDamage(const int32 InDamage, const EAberrationElementType InDamageType)
 {
-	CurrentHealth -= InDamage;
+	// Calculate damage
+	float DamageMultiplier = GeneralStats.GetMultiplier(EStrategicType::Defense, InDamageType);
+	float DamageModifier = (DamageMultiplier - 1.0f) * InDamage;
+	int32 Damage = InDamage - DamageModifier;
+
+	// Take damage
+	CurrentHealth -= Damage;
 	OnTakeDamage.Broadcast();
 
+	// Check if dead
 	if(CurrentHealth <= 0)
 	{
 		OnDeath.Broadcast();
 	}
+}
+
+int32 UStatsComponent::DealDamage(const int32 InDamage, const EAberrationElementType InDamageType)
+{
+	// Calculate damage
+	float DamageMultiplier = GeneralStats.GetMultiplier(EStrategicType::Attack, InDamageType);
+	int32 Damage = (GeneralStats.Attack + InDamage) * DamageMultiplier;
+	return Damage;
 }

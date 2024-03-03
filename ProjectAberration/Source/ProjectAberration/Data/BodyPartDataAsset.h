@@ -51,6 +51,9 @@ struct FPartAbility
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Ability")
 	int32 Damage;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Ability")
+	EAberrationElementType ElementType;
 };
 
 USTRUCT(BlueprintType)
