@@ -21,7 +21,7 @@ struct FPartStats
 {
 	GENERATED_USTRUCT_BODY()
 
-	static TMap<EAberrationElementType, float> InitializeModifiers();
+	static TMap<EAberrationElementType, float> InitializeMultipliers(const float value = 0.0f);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	int32 Health;
@@ -30,10 +30,10 @@ struct FPartStats
 	int32 Attack;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
-	TMap<EAberrationElementType, float> AttackMultipliers = FPartStats::InitializeModifiers();
+	TMap<EAberrationElementType, float> AttackMultipliers = FPartStats::InitializeMultipliers();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
-	TMap<EAberrationElementType, float> DefenseMultipliers = FPartStats::InitializeModifiers();
+	TMap<EAberrationElementType, float> DefenseMultipliers = FPartStats::InitializeMultipliers();
 
 	float GetMultiplier(EStrategicType type, EAberrationElementType element);
 };

@@ -16,6 +16,10 @@ UStatsComponent::UStatsComponent()
 void UStatsComponent::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// Initialize multipliers to 100%
+	GeneralStats.AttackMultipliers = FPartStats::InitializeMultipliers(1.0f);
+	GeneralStats.DefenseMultipliers = FPartStats::InitializeMultipliers(1.0f);
 }
 
 
@@ -50,6 +54,6 @@ int32 UStatsComponent::DealDamage(const int32 InDamage, const EAberrationElement
 	// Calculate damage
 	float DamageMultiplier = GeneralStats.GetMultiplier(EStrategicType::Attack, InDamageType);
 	int32 Damage = (GeneralStats.Attack + InDamage) * DamageMultiplier;
-	
+
 	return Damage;
 }

@@ -15,12 +15,12 @@ float FPartStats::GetMultiplier(EStrategicType type, EAberrationElementType elem
     }
 }
 
-TMap<EAberrationElementType, float> FPartStats::InitializeModifiers()
+TMap<EAberrationElementType, float> FPartStats::InitializeMultipliers(const float value)
 {
     TMap<EAberrationElementType, float> map;
-    map.Add(EAberrationElementType::Fire, 0.0f);
-    map.Add(EAberrationElementType::Water, 0.0f);
-    map.Add(EAberrationElementType::Earth, 0.0f);
-    map.Add(EAberrationElementType::Air, 0.0f);
+    map.Add(EAberrationElementType::Fire, value);
+    map.Add(EAberrationElementType::Water, value);
+    map.Add(EAberrationElementType::Earth, value);
+    map.Add(EAberrationElementType::Air, value);
     return map;
 }
