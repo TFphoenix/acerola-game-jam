@@ -31,7 +31,7 @@ public:
 
 public:
 	UFUNCTION(BlueprintCallable, Category = "Combat")
-	void TakeDamage(const int32 InDamage, const EAberrationElementType InDamageType);
+	int32 TakeDamage(const int32 InDamage, const EAberrationElementType InDamageType);
 
 	UFUNCTION(BlueprintCallable, Category = "Combat")
 	int32 DealDamage(const int32 InDamage, const EAberrationElementType InDamageType);
