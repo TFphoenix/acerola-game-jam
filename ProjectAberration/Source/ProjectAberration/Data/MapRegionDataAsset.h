@@ -73,6 +73,9 @@ class PROJECTABERRATION_API UMapRegionDataAsset : public UDataAsset
 
 public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	int32 ID;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	FDynamicStateSprite LogoSprite;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
