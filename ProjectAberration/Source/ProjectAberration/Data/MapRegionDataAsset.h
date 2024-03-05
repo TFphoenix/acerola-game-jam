@@ -72,21 +72,37 @@ class PROJECTABERRATION_API UMapRegionDataAsset : public UDataAsset
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	// Data
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Data")
 	int32 ID;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	FDynamicStateSprite LogoSprite;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	FDynamicStateSprite DefaultMapSprite;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	FDynamicStateSprite ConqueredMapSprite;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Data")
 	TArray<FRegionEnemy> Enemies;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	// State
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="State")
+	bool bIsLocked = true;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="State")
+	bool bIsConquered = false;
+
+	// Visuals
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Visuals")
+	FDynamicStateSprite LogoSprite;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Visuals")
+	FDynamicStateSprite DefaultMapSprite;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Visuals")
+	FDynamicStateSprite ConqueredMapSprite;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Visuals")
 	FRegionEnvironment Environment;
+
+public:
+	UFUNCTION(BlueprintCallable, Category="Visuals")
+	UPaperSprite* GetLogoSprite();
+
+	UFUNCTION(BlueprintCallable, Category="Visuals")
+	UPaperSprite* GetMapSprite(bool InHighlight);
 };
