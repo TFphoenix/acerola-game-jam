@@ -54,7 +54,7 @@ struct FRegionEnvironment
 
 public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	UPaperSprite *EnvironmentBackground;
+	UPaperSprite *Background;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UMaterial *GroundMaterial;
