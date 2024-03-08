@@ -6,6 +6,8 @@
 #include "BodyPartDataAsset.h"
 #include "AberrationSaveData.generated.h"
 
+class UPaperSprite;
+
 USTRUCT(BlueprintType)
 struct FRegionProgressData
 {
@@ -30,6 +32,9 @@ struct FAberrationPlayerData
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString Name;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPaperSprite* Avatar;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<UBodyPartDataAsset*> AvailableBodyParts;
