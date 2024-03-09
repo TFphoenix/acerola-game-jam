@@ -62,25 +62,13 @@ struct FPartSprites
 	GENERATED_USTRUCT_BODY()
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
-	UPaperSprite *Front3Sprite;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
-	UPaperSprite *Front2Sprite;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
-	UPaperSprite *Front1Sprite;
+	UPaperSprite *FrontSprite;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
 	UPaperSprite *BodySprite;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
-	UPaperSprite *Back1Sprite;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
-	UPaperSprite *Back2Sprite;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Sprites")
-	UPaperSprite *Back3Sprite;
+	UPaperSprite *BackSprite;
 };
 
 /**
@@ -94,6 +82,9 @@ class PROJECTABERRATION_API UBodyPartDataAsset : public UDataAsset
 public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	FString Name;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	bool bIsBody;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	EStrategicType StrategicType;
