@@ -32,7 +32,7 @@ struct FSceneData
 	UPaperSprite *Background;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	int32 DialogPerson;
+	int32 DialogPerson = 1;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	FString DialogText;
