@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
 #include "BodyPartDataAsset.h"
+#include "CutsceneDataAsset.h"
 #include "MapRegionDataAsset.generated.h"
 
 class UPaperSprite;
@@ -85,6 +86,32 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="State")
 	bool bIsConquered = false;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="State")
+	UMapRegionDataAsset *UnlocksRegion;
+
+	// Cutscenes
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Cutscenes")
+	UCutsceneDataAsset *CutsceneBeforeCombat;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Cutscenes")
+	UCutsceneDataAsset *CutsceneAfterCombatWon;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Cutscenes")
+	UCutsceneDataAsset *CutsceneAfterCombatLost;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Cutscenes")
+	UCutsceneDataAsset *CutsceneAfterConquered;
+
+	// Levels
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Levels")
+	FName OpenLevelAfterCombatWon;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Levels")
+	FName OpenLevelAfterCombatLost;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Levels")
+	FName OpenLevelAfterConquered;
 
 	// Visuals
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Visuals")
