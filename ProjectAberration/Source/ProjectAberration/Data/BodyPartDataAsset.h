@@ -35,6 +35,12 @@ struct FPartStats
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	TMap<EAberrationElementType, float> DefenseMultipliers = FPartStats::InitializeMultipliers();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	float CriticalChance = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	float EvasionChance = 0.0f;
+
 	float GetMultiplier(EStrategicType type, EAberrationElementType element);
 };
 
@@ -51,6 +57,12 @@ struct FPartAbility
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Ability")
 	int32 Damage;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Ability")
+	float HitChance = 1.0f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Ability")
+	float SpecialEffectChance = 0.0f;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Ability")
 	EAberrationElementType ElementType;
@@ -85,6 +97,9 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	bool bIsBody;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	int32 BodySlots;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	EStrategicType StrategicType;
