@@ -68,7 +68,8 @@ class BodyConfiguration:
         
         # damage
         damageMultiplier = self.attackMultipliers[ability.elementType]
-        damage = (self.attack + ability.damage) * damageMultiplier
+        damageDealt = self.attack + ability.damage
+        damage = damageDealt + (damageDealt * damageMultiplier)
         targetMultiplier = target.defenseMultipliers[ability.elementType]
         targetDamageReducer = (targetMultiplier - 1.0) * damage
         damage -= targetDamageReducer
@@ -101,7 +102,7 @@ class BodyConfiguration:
         self.attack = 0
         self.criticalChance = 0
         self.evasionChance = 0
-        self.attackMultipliers = {"water": 1.0, "earth": 1.0, "fire": 1.0, "air": 1.0, "neutral": 1.0}
+        self.attackMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.0, "air": 0.0, "neutral": 0.0}
         self.defenseMultipliers = {"water": 1.0, "earth": 1.0, "fire": 1.0, "air": 1.0, "neutral": 1.0}
         self.abilities = []
         
