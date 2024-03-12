@@ -8,9 +8,11 @@
 
 ### 1. Music
 
-Music licensed under © [Pixabay Content License](https://pixabay.com/service/license-summary/) 2024
-
-- Unknown Realm by Psychronic<br>https://pixabay.com/music/video-games-unknown-realm-147409/
-- Green Sky by DSTechnician<br>https://pixabay.com/music/synthwave-green-sky-125179/
+- Unknown Realm by <a href="https://pixabay.com/users/psychronic-13092015/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=147409">Douglas Gustafson</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=147409">Pixabay</a>
+- Green Sky by <a href="https://pixabay.com/users/dstechnician-26430546/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=125179">DSTechnician</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=125179">Pixabay</a>
 
 ### 2. Sound Effects
+
+Sound effects under [Creative Common 0 License](https://creativecommons.org/publicdomain/zero/1.0/) from [Freesound](https://freesound.org/)
+
+Some of the sound effects have been generated using [jsfxr](https://sfxr.me/), which is a JavaScript tool for generating 8-bit SFX
