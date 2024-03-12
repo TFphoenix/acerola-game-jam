@@ -83,7 +83,7 @@ int32 UStatsComponent::CalculateAbilityDamage(const FPartAbility &InAbility, USt
 	float CriticalRng = FMath::RandRange(0.0, 1.0);
 	if (CriticalRng <= GeneralStats.CriticalChance)
 	{
-		OnAttackEvaded.Broadcast();
+		OnAttackCritical.Broadcast();
 		return Damage * 2;
 	}
 
