@@ -30,16 +30,16 @@ struct FPartStats
 	int32 Attack;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
-	TMap<EAberrationElementType, float> AttackMultipliers = FPartStats::InitializeMultipliers();
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
-	TMap<EAberrationElementType, float> DefenseMultipliers = FPartStats::InitializeMultipliers();
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	float CriticalChance = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	float EvasionChance = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	TMap<EAberrationElementType, float> AttackMultipliers = FPartStats::InitializeMultipliers();
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	TMap<EAberrationElementType, float> DefenseMultipliers = FPartStats::InitializeMultipliers();
 
 	float GetMultiplier(EStrategicType type, EAberrationElementType element);
 };
