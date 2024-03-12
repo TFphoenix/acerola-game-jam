@@ -1,4 +1,5 @@
 from itertools import combinations
+import random
 
 
 class Ability:
@@ -53,11 +54,27 @@ class BodyConfiguration:
         return self.abilities[0]
     
     def calculate_damage(self, ability, target):
+        # evasion chance
+        evasionRng = random.uniform(0.0, 1.0)
+        if evasionRng <= target.evasionChance:
+            return 0
+        
+        # hit chance
+        hitRng = random.uniform(0.0, 1.0)
+        if ability.hitChance < hitRng:
+            return 0
+        
+        # damage
         damageMultiplier = self.attackMultipliers[ability.elementType]
         damage = (self.attack + ability.damage) * damageMultiplier
         targetMultiplier = target.defenseMultipliers[ability.elementType]
         targetDamageReducer = (targetMultiplier - 1.0) * damage
         damage -= targetDamageReducer
+        
+        # critical chance
+        criticalRng = random.uniform(0.0, 1.0)
+        if criticalRng <= self.criticalChance:
+            damage *= 2
         return damage
     
     def take_damage(self, damage):
@@ -131,32 +148,34 @@ for body in bodies:
         configurations.append(BodyConfiguration(body, [part]))
         
 # Test Configurations
-for (p1, p2) in list(combinations(configurations, 2)):
-    p1.reset()
-    p2.reset()
-    while (not p1.is_dead()) or (not p2.is_dead()):
-        p1_ability = p1.chosen_ability()
-        p2_ability = p2.chosen_ability()
-        p1_damage = p1.calculate_damage(p1_ability, p2)
-        p2_damage = p2.calculate_damage(p2_ability, p1)
-        p1.take_damage(p2_damage)
-        p2.take_damage(p1_damage)
-        # draw
-        if p1.is_dead() and p2.is_dead():
-            if p1.currentHealth > p2.currentHealth:
-                p1.win()
-                p2.lose()
-            else:
+ROUNDS = 1000
+for _ in range(ROUNDS):
+    for (p1, p2) in list(combinations(configurations, 2)):
+        p1.reset()
+        p2.reset()
+        while (not p1.is_dead()) or (not p2.is_dead()):
+            p1_ability = p1.chosen_ability()
+            p2_ability = p2.chosen_ability()
+            p1_damage = p1.calculate_damage(p1_ability, p2)
+            p2_damage = p2.calculate_damage(p2_ability, p1)
+            p1.take_damage(p2_damage)
+            p2.take_damage(p1_damage)
+            # draw
+            if p1.is_dead() and p2.is_dead():
+                if p1.currentHealth > p2.currentHealth:
+                    p1.win()
+                    p2.lose()
+                else:
+                    p2.win()
+                    p1.lose()
+            # p2 wins
+            elif p1.is_dead():
                 p2.win()
                 p1.lose()
-        # p2 wins
-        elif p1.is_dead():
-            p2.win()
-            p1.lose()
-        # p1 wins
-        elif p2.is_dead():
-            p1.win()
-            p2.lose()
+            # p1 wins
+            elif p2.is_dead():
+                p1.win()
+                p2.lose()
 
 # Plot Results
 import matplotlib.pyplot as plt
@@ -168,8 +187,8 @@ losses = [c.lost for c in configurations]
 x = np.arange(len(labels))
 width = 0.35
 fig, ax = plt.subplots()
-rects1 = ax.bar(x - width/2, wins, width, label='Wins')
-rects2 = ax.bar(x + width/2, losses, width, label='Losses')
+rects1 = ax.bar(x - width/2, wins, width, label='Wins', color='yellowgreen')
+rects2 = ax.bar(x + width/2, losses, width, label='Losses', color='orangered')
 ax.set_ylabel('Scores')
 ax.set_title('Scores by configuration')
 ax.set_xticks(x)
