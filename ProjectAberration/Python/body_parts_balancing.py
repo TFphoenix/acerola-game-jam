@@ -132,9 +132,9 @@ for body in bodies:
         
 # Test Configurations
 for (p1, p2) in list(combinations(configurations, 2)):
+    p1.reset()
+    p2.reset()
     while (not p1.is_dead()) or (not p2.is_dead()):
-        p1.reset()
-        p2.reset()
         p1_ability = p1.chosen_ability()
         p2_ability = p2.chosen_ability()
         p1_damage = p1.calculate_damage(p1_ability, p2)
