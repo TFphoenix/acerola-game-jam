@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "StatsComponent.h"
+#include "Math/UnrealMathUtility.h"
 
 // Sets default values for this component's properties
 UStatsComponent::UStatsComponent()
@@ -30,7 +31,8 @@ void UStatsComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 
 int32 UStatsComponent::TakeDamage(const int32 &InDamage)
 {
-	if (bIsDead) return 0;
+	if (bIsDead)
+		return 0;
 
 	// Take damage
 	CurrentHealth -= InDamage;
@@ -48,17 +50,42 @@ int32 UStatsComponent::TakeDamage(const int32 &InDamage)
 
 int32 UStatsComponent::CalculateAbilityDamage(const FPartAbility &InAbility, UStatsComponent *InOpponentStats)
 {
-	if (bIsDead) return 0;
+	if (bIsDead)
+		return 0;
 
-	// Calculate damage dealt
+	// Evasion
+	float EvasionRng = FMath::RandRange(0.0, 1.0);
+	if (EvasionRng <= InOpponentStats->GeneralStats.EvasionChance)
+	{
+		OnAttackEvaded.Broadcast();
+		return 0;
+	}
+
+	// Hit Chance
+	float HitRng = FMath::RandRange(0.0, 1.0);
+	if (HitRng < InAbility.HitChance)
+	{
+		OnAttackMissed.Broadcast();
+		return 0;
+	}
+
+	// Damage (dealt)
 	float DamageMultiplier = GeneralStats.GetMultiplier(EStrategicType::Attack, InAbility.ElementType);
 	int32 BaseDamage = InAbility.Damage + GeneralStats.Attack;
-	int32 Damage = BaseDamage + (BaseDamage * DamageMultiplier);
+	int32 Damage = BaseDamage * DamageMultiplier;
 
-	// Calculate damage taken
+	// Damage (received)
 	float OpponentDamageMultiplier = InOpponentStats->GeneralStats.GetMultiplier(EStrategicType::Defense, InAbility.ElementType);
 	float OpponentDamageModifier = (OpponentDamageMultiplier - 1.0f) * Damage;
 	Damage -= OpponentDamageModifier;
+
+	// Critical Chance
+	float CriticalRng = FMath::RandRange(0.0, 1.0);
+	if (CriticalRng <= GeneralStats.CriticalChance)
+	{
+		OnAttackEvaded.Broadcast();
+		return Damage * 2;
+	}
 
 	return Damage;
 }

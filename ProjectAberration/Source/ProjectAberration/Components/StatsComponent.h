@@ -16,6 +16,9 @@ class PROJECTABERRATION_API UStatsComponent : public UActorComponent
 	// Events
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBlueprintOnDeath);
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBlueprintOnTakeDamage);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBlueprintOnAttackCritical);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBlueprintOnAttackMissed);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBlueprintOnAttackEvaded);
 
 public:
 	// Sets default values for this component's properties
@@ -52,4 +55,13 @@ public:
 
 	UPROPERTY(BlueprintAssignable)
 	FBlueprintOnDeath OnDeath;
+
+	UPROPERTY(BlueprintAssignable)
+	FBlueprintOnAttackCritical OnAttackCritical;
+
+	UPROPERTY(BlueprintAssignable)
+	FBlueprintOnAttackMissed OnAttackMissed;
+
+	UPROPERTY(BlueprintAssignable)
+	FBlueprintOnAttackEvaded OnAttackEvaded;
 };
