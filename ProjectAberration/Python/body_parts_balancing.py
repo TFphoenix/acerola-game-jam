@@ -26,7 +26,7 @@ class BodyPart:
                  defenseMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.0, "air": 0.0, "neutral": 0.0},
                  criticalChance = 0.0,
                  evasionChance = 0.0,
-                 elementType = "none",
+                 elementType = "neutral",
                  abilities = []
                  ):
         self.name = name
@@ -68,7 +68,8 @@ class BodyConfiguration:
         
         # damage
         damageMultiplier = self.attackMultipliers[ability.elementType]
-        damage = (self.attack + ability.damage) * damageMultiplier
+        damageDealt = self.attack + ability.damage
+        damage = damageDealt + (damageDealt * damageMultiplier)
         targetMultiplier = target.defenseMultipliers[ability.elementType]
         targetDamageReducer = (targetMultiplier - 1.0) * damage
         damage -= targetDamageReducer
@@ -123,21 +124,24 @@ class BodyConfiguration:
 
 # Body Parts
 bodies: list[BodyPart] = [
-    # BodyPart(name = "NeutralBody", symbol = '', health = 200, evasionChance = 0.0, elementType = "neutral", defenseMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.0, "air": 0.0}),
-    BodyPart(name = "FireBody", symbol = 'F', health = 225, evasionChance = 0.1, elementType = "fire", defenseMultipliers = {"water": -0.5, "earth": 0.0, "fire": 0.0, "air": 0.5}),
+    # BodyPart(name = "NeutralBody", symbol = 'N', health = 200, evasionChance = 0.0, elementType = "neutral", defenseMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.0, "air": 0.0}),
+    BodyPart(name = "FireBody", symbol = 'F', health = 225, evasionChance = 0.15, elementType = "fire", defenseMultipliers = {"water": -0.5, "earth": 0.0, "fire": 0.0, "air": 0.5}),
     BodyPart(name = "WaterBody", symbol = 'W', health = 160, evasionChance = 0.35, elementType = "water", defenseMultipliers = {"water": 0.0, "earth": -0.5, "fire": 0.5, "air": 0.0}),
     BodyPart(name = "AirBody", symbol = 'A', health = 150, evasionChance = 0.4, elementType = "air", defenseMultipliers = {"water": 0.0, "earth": 0.5, "fire": -0.5, "air": 0.0}),
-    BodyPart(name = "EarthBody", symbol = 'E', health = 250, evasionChance = 0.0, elementType = "earth", defenseMultipliers = {"water": 0.5, "earth": 0.0, "fire": 0.0, "air": -0.5}),
+    BodyPart(name = "EarthBody", symbol = 'E', health = 250, evasionChance = 0.08, elementType = "earth", defenseMultipliers = {"water": 0.5, "earth": 0.0, "fire": 0.0, "air": -0.5}),
 ]
 
 bodyParts: list[BodyPart] = [
-    BodyPart(name = "FireHorns", symbol = 'h', attack = 17, criticalChance = 0.02, elementType = "fire", attackMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.5, "air": 0.0}, defenseMultipliers = {"water": -0.25, "earth": 0.0, "fire": 0.0, "air": 0.0},
-             abilities = [Ability(name = "FireAttack", damage = 25, hitChance = 0.65, elementType = "fire")]),
+    # BodyPart(name = "Neutral", symbol = 'n', attack = 20, criticalChance = 0.0, elementType = "neutral", attackMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.0, "air": 0.0}, defenseMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.0, "air": 0.0},
+    #          abilities = [Ability(name = "NeutralAttack", damage = 25, hitChance = 1.0, elementType = "neutral")]),
+    
+    BodyPart(name = "FireHorns", symbol = 'h', attack = 17, criticalChance = 0.04, elementType = "fire", attackMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.5, "air": 0.0}, defenseMultipliers = {"water": -0.25, "earth": 0.0, "fire": 0.0, "air": 0.0},
+             abilities = [Ability(name = "FireAttack", damage = 25, hitChance = 0.6, elementType = "fire")]),
     
     BodyPart(name = "WaterTail", symbol = 't', attack = 10, criticalChance = 0.07, elementType = "water", attackMultipliers = {"water": 0.5, "earth": 0.0, "fire": 0.0, "air": 0.0}, defenseMultipliers = {"water": 0.0, "earth": -0.25, "fire": 0.0, "air": 0.0},
              abilities = [Ability(name = "WaterAttack", damage = 15, hitChance = 1.0, elementType = "water")]),
     
-    BodyPart(name = "AirWings", symbol = 'w', attack = 12, criticalChance = 0.1, elementType = "air", attackMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.0, "air": 0.5}, defenseMultipliers = {"water": 0.0, "earth": 0.0, "fire": -0.25, "air": 0.0},
+    BodyPart(name = "AirWings", symbol = 'w', attack = 12, criticalChance = 0.15, elementType = "air", attackMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.0, "air": 0.5}, defenseMultipliers = {"water": 0.0, "earth": 0.0, "fire": -0.25, "air": 0.0},
              abilities = [Ability(name = "AirAttack", damage = 18, hitChance = 0.8, elementType = "air")]),
 
     BodyPart(name = "EarthSpikes", symbol = 's', attack = 15, criticalChance = 0.0, elementType = "earth", attackMultipliers = {"water": 0.0, "earth": 0.5, "fire": 0.0, "air": 0.0}, defenseMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.0, "air": -0.25},

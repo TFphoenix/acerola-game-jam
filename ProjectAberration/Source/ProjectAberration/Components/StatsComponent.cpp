@@ -52,7 +52,8 @@ int32 UStatsComponent::CalculateAbilityDamage(const FPartAbility &InAbility, USt
 
 	// Calculate damage dealt
 	float DamageMultiplier = GeneralStats.GetMultiplier(EStrategicType::Attack, InAbility.ElementType);
-	int32 Damage = (InAbility.Damage + GeneralStats.Attack) * DamageMultiplier;
+	int32 BaseDamage = InAbility.Damage + GeneralStats.Attack;
+	int32 Damage = BaseDamage + (BaseDamage * DamageMultiplier);
 
 	// Calculate damage taken
 	float OpponentDamageMultiplier = InOpponentStats->GeneralStats.GetMultiplier(EStrategicType::Defense, InAbility.ElementType);
