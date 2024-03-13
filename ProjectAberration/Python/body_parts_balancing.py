@@ -53,7 +53,7 @@ class BodyConfiguration:
         self._initialize_stats()
         
     def chosen_ability(self):
-        return self.abilities[0]
+        return random.choice(self.abilities)
     
     def calculate_damage(self, ability, target):
         # evasion chance
@@ -143,13 +143,21 @@ bodyParts: list[BodyPart] = [
     #          abilities = [Ability(name = "NeutralAttack", damage = 15, hitChance = 0.8, elementType = "neutral")])
     
     BodyPart(name = "FireHorns", symbol = 'h', attack = 10, criticalChance = 0.04, elementType = "fire", attackMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.5, "air": 0.0}, defenseMultipliers = {"water": -0.25, "earth": 0.0, "fire": 0.0, "air": 0.0},
-             abilities = [Ability(name = "FireAttack", damage = 27, hitChance = 0.8, elementType = "fire")]),
+             abilities = [
+                 Ability(name = "FireAttack", damage = 27, hitChance = 0.8, elementType = "fire"),
+                 Ability(name = "ChaoticFireAttack", damage = 54, hitChance = 0.5, elementType = "fire")]),
     BodyPart(name = "WaterTail", symbol = 't', attack = 10, criticalChance = 0.07, elementType = "water", attackMultipliers = {"water": 0.5, "earth": 0.0, "fire": 0.0, "air": 0.0}, defenseMultipliers = {"water": 0.0, "earth": -0.25, "fire": 0.0, "air": 0.0},
-             abilities = [Ability(name = "WaterAttack", damage = 17, hitChance = 1.0, elementType = "water")]),
+             abilities = [
+                 Ability(name = "WaterAttack", damage = 17, hitChance = 1.0, elementType = "water"),
+                 Ability(name = "ChaoticWaterAttack", damage = 34, hitChance = 0.5, elementType = "water")]),
     BodyPart(name = "AirWings", symbol = 'w', attack = 10, criticalChance = 0.15, elementType = "air", attackMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.0, "air": 0.5}, defenseMultipliers = {"water": 0.0, "earth": 0.0, "fire": -0.25, "air": 0.0},
-             abilities = [Ability(name = "AirAttack", damage = 20, hitChance = 0.9, elementType = "air")]),
+             abilities = [
+                 Ability(name = "AirAttack", damage = 20, hitChance = 0.9, elementType = "air"),
+                 Ability(name = "ChaoticAirAttack", damage = 40, hitChance = 0.45, elementType = "air")]),
     BodyPart(name = "EarthSpikes", symbol = 's', attack = 10, criticalChance = 0.2, elementType = "earth", attackMultipliers = {"water": 0.0, "earth": 0.5, "fire": 0.0, "air": 0.0}, defenseMultipliers = {"water": 0.0, "earth": 0.0, "fire": 0.0, "air": -0.25},
-             abilities = [Ability(name = "EarthAttack", damage = 14, hitChance = 1.0, elementType = "earth")])
+             abilities = [
+                 Ability(name = "EarthAttack", damage = 14, hitChance = 1.0, elementType = "earth"),
+                 Ability(name = "ChaoticEarthAttack", damage = 28, hitChance = 0.5, elementType = "earth")])
 ]
 
 # Body Part Configurations
