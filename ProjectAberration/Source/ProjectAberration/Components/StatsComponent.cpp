@@ -48,6 +48,21 @@ int32 UStatsComponent::TakeDamage(const int32 &InDamage)
 	return InDamage;
 }
 
+int32 UStatsComponent::CalculatePureDamage(const FPartAbility &InAbility, UStatsComponent *InOpponentStats)
+{
+	// Damage (dealt)
+	float DamageMultiplier = GeneralStats.GetMultiplier(EStrategicType::Attack, InAbility.ElementType);
+	int32 BaseDamage = InAbility.Damage + GeneralStats.Attack;
+	int32 Damage = BaseDamage * DamageMultiplier;
+
+	// Damage (received)
+	float OpponentDamageMultiplier = InOpponentStats->GeneralStats.GetMultiplier(EStrategicType::Defense, InAbility.ElementType);
+	float OpponentDamageModifier = (OpponentDamageMultiplier - 1.0f) * Damage;
+	Damage -= OpponentDamageModifier;
+
+	return Damage;
+}
+
 int32 UStatsComponent::CalculateAbilityDamage(const FPartAbility &InAbility, UStatsComponent *InOpponentStats)
 {
 	if (bIsDead)
@@ -69,15 +84,7 @@ int32 UStatsComponent::CalculateAbilityDamage(const FPartAbility &InAbility, USt
 		return 0;
 	}
 
-	// Damage (dealt)
-	float DamageMultiplier = GeneralStats.GetMultiplier(EStrategicType::Attack, InAbility.ElementType);
-	int32 BaseDamage = InAbility.Damage + GeneralStats.Attack;
-	int32 Damage = BaseDamage * DamageMultiplier;
-
-	// Damage (received)
-	float OpponentDamageMultiplier = InOpponentStats->GeneralStats.GetMultiplier(EStrategicType::Defense, InAbility.ElementType);
-	float OpponentDamageModifier = (OpponentDamageMultiplier - 1.0f) * Damage;
-	Damage -= OpponentDamageModifier;
+	int32 Damage = CalculatePureDamage(InAbility, InOpponentStats);
 
 	// Critical Chance
 	float CriticalRng = FMath::RandRange(0.0, 1.0);
@@ -88,4 +95,23 @@ int32 UStatsComponent::CalculateAbilityDamage(const FPartAbility &InAbility, USt
 	}
 
 	return Damage;
+}
+
+FPartAbility UStatsComponent::ChooseAbility(TArray<FPartAbility> InAbilities, UStatsComponent *InOpponentStats)
+{
+	FPartAbility ChosenAbility = InAbilities[0];
+	float MaxCost = 0;
+
+	for (FPartAbility Ability : InAbilities)
+	{
+		int32 Damage = CalculatePureDamage(Ability, InOpponentStats);
+		float Cost = Damage * Ability.HitChance;
+		if (Cost > MaxCost)
+		{
+			MaxCost = Cost;
+			ChosenAbility = Ability;
+		}
+	}
+
+	return ChosenAbility;
 }
