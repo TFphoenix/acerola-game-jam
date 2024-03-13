@@ -38,6 +38,12 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Combat")
 	int32 CalculateAbilityDamage(const FPartAbility& InAbility, UStatsComponent* InOpponentStats);
+	
+	UFUNCTION(BlueprintCallable, Category = "Combat")
+	FPartAbility ChooseAbility(TArray<FPartAbility> InAbilities, UStatsComponent* InOpponentStats);
+
+	UFUNCTION(BlueprintCallable, Category = "Combat")
+	int32 CalculatePureDamage(const FPartAbility& InAbility, UStatsComponent* InOpponentStats);
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

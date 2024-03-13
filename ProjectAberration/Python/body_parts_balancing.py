@@ -125,15 +125,15 @@ class BodyConfiguration:
 # Body Parts
 bodies: list[BodyPart] = [
     BodyPart(name = "FireBody", symbol = 'F', health = 230, evasionChance = 0.05, elementType = "fire", defenseMultipliers = {"water": -0.5, "earth": 0.0, "fire": 0.0, "air": 0.5}),
-    BodyPart(name = "WaterBody", symbol = 'W', health = 180, evasionChance = 0.25, elementType = "water", defenseMultipliers = {"water": 0.0, "earth": -0.5, "fire": 0.5, "air": 0.0}),
-    BodyPart(name = "AirBody", symbol = 'A', health = 150, evasionChance = 0.3, elementType = "air", defenseMultipliers = {"water": 0.0, "earth": 0.5, "fire": -0.5, "air": 0.0}),
+    BodyPart(name = "WaterBody", symbol = 'W', health = 180, evasionChance = 0.15, elementType = "water", defenseMultipliers = {"water": 0.0, "earth": -0.5, "fire": 0.5, "air": 0.0}),
+    BodyPart(name = "AirBody", symbol = 'A', health = 150, evasionChance = 0.2, elementType = "air", defenseMultipliers = {"water": 0.0, "earth": 0.5, "fire": -0.5, "air": 0.0}),
     BodyPart(name = "EarthBody", symbol = 'E', health = 250, evasionChance = 0.01, elementType = "earth", defenseMultipliers = {"water": 0.5, "earth": 0.0, "fire": 0.0, "air": -0.5}),
     
     # start
     BodyPart(name = "StartBody", symbol = 'S', health = 100, evasionChance = 0.0, elementType = "earth", defenseMultipliers = {"water": 0.5, "earth": 0.5, "fire": 0.5, "air": 0.5}),
     
     # end
-    BodyPart(name = "EndBody", symbol = 'X', health = 200, evasionChance = 0.1, elementType = "earth", defenseMultipliers = {"water": 0.5, "earth": 0.5, "fire": 0.5, "air": 0.5})
+    BodyPart(name = "EndBody", symbol = 'X', health = 300, evasionChance = 0.1, elementType = "earth", defenseMultipliers = {"water": 0.5, "earth": 0.5, "fire": 0.5, "air": 0.5})
 ]
 
 bodyParts: list[BodyPart] = [
@@ -163,12 +163,12 @@ bodyParts: list[BodyPart] = [
              abilities = [Ability(name = "StartAttack", damage = 10, hitChance = 1.0, elementType = "earth")]),
     
     # end
-    BodyPart(name = "EndHands", symbol = 'x', attack = 20, criticalChance = 0.1, elementType = "earth", attackMultipliers = {"water": 0.5, "earth": 0.5, "fire": 0.5, "air": 0.5},
+    BodyPart(name = "EndHands", symbol = 'x', attack = 20, criticalChance = 0.15, elementType = "earth", attackMultipliers = {"water": 0.5, "earth": 0.5, "fire": 0.5, "air": 0.5},
              abilities = [
-                 Ability(name = "Water Hand", damage = 20, hitChance = 0.7, elementType = "water"),
-                 Ability(name = "Earth Hand", damage = 20, hitChance = 0.7, elementType = "earth"),
-                 Ability(name = "Air Hand", damage = 20, hitChance = 0.7, elementType = "air"),
-                 Ability(name = "Fire Hand", damage = 20, hitChance = 0.7, elementType = "fire")
+                 Ability(name = "Water Hand", damage = 20, hitChance = 0.8, elementType = "water"),
+                 Ability(name = "Earth Hand", damage = 20, hitChance = 0.8, elementType = "earth"),
+                 Ability(name = "Air Hand", damage = 20, hitChance = 0.8, elementType = "air"),
+                 Ability(name = "Fire Hand", damage = 20, hitChance = 0.8, elementType = "fire")
                  ])
 ]
 
