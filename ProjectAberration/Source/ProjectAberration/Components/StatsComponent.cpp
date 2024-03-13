@@ -63,7 +63,7 @@ int32 UStatsComponent::CalculateAbilityDamage(const FPartAbility &InAbility, USt
 
 	// Hit Chance
 	float HitRng = FMath::RandRange(0.0, 1.0);
-	if (HitRng < InAbility.HitChance)
+	if (HitRng > InAbility.HitChance)
 	{
 		OnAttackMissed.Broadcast();
 		return 0;
