@@ -1,9 +1,9 @@
 # Acerola Jam 0 (2024) - Project Source Code
 
-- **Game Jam Page:** https://itch.io/jam/acerola-jam-0
-- **Submission Title:** Regenesis
 - **Author:** Teodor-Adrian Mihaescu
-- **itch.io Page:** TODO
+- **Game Jam Page:** https://itch.io/jam/acerola-jam-0
+- **Submission:** [Regenesis - Acerola Jam 0 Submission](https://itch.io/jam/acerola-jam-0/rate/2582702)
+- **itch.io Page:** https://tfphoenix.itch.io/regenesis
 
 ## © Credits
 
