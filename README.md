@@ -1,3 +1,5 @@
+![Regenesis](Art/Itch/Itch_Banner.png)
+
 # Acerola Jam 0 (2024) - Project Source Code
 
 - **Author:** Teodor-Adrian Mihaescu
