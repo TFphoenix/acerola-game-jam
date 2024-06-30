@@ -5,6 +5,10 @@
 - **Submission:** [Regenesis - Acerola Jam 0 Submission](https://itch.io/jam/acerola-jam-0/rate/2582702)
 - **itch.io Page:** https://tfphoenix.itch.io/regenesis
 
+## Project Dependencies
+
+1. Add `StarterContent` to the Unreal Project, under `📂ProjectAberration/Content/StarterContent`
+
 ## © Credits
 
 ### 1. Music
