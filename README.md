@@ -1,6 +1,6 @@
 ![Regenesis](Art/Itch/Itch_Banner.png)
 
-# Acerola Jam 0 (2024) - Project Source Code
+# Acerola Jam 0 (2024) - Regenesis
 
 - **Author:** Teodor-Adrian Mihaescu
 - **Game Jam Page:** https://itch.io/jam/acerola-jam-0
